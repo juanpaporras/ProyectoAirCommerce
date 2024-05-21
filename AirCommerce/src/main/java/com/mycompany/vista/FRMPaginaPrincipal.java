@@ -1,4 +1,9 @@
 package com.mycompany.vista;
+
+import Manejador.Cliente;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 public class FRMPaginaPrincipal extends javax.swing.JFrame {
     public FRMPaginaPrincipal() {
         initComponents();
@@ -105,7 +110,22 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+public void escucharBotones(ActionListener manejador){
+    this.jbLogin.addActionListener(manejador);
+}
 
+public void setLogin(Cliente cliente){
+    jtUsername.setText(cliente.getId());
+    jtPassword.setText(cliente.getPassword());
+}
+
+public void limpiarLogin(){
+    
+}
+
+public void getMensaje(){
+    JOptionPane.showMessageDialog(null, "Login correcto");
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CuadradoAzul;
     private javax.swing.JLabel CuadradoAzulInfo;
