@@ -7,6 +7,7 @@ package Controlador;
 import com.mycompany.vista.FRMPaginaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +25,7 @@ public class manejador_prueba implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Login":
-                
+                JOptionPane.showMessageDialog(null,"Hola");
                 break;
             default:
                 throw new AssertionError();
