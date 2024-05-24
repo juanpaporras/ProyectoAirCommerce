@@ -1,4 +1,12 @@
-com\mycompany\vista\FRMPaginaPrincipal.class
 com\mycompany\vista\FRMRegistroVuelos.class
-com\mycompany\aircommerce\AirCommerce.class
+Manejador\Cliente.class
+Controlador\manejador_ventInicial.class
+Controlador\manejador_PagPrin.class
+com\mycompany\vista\FRMPagos.class
+Manejador\Vuelo.class
+com\mycompany\vista\FRMPaginaPrincipal.class
+com\mycompany\vista\FRMPagos$1.class
+Controlador\Registro_Cliente.class
 com\mycompany\vista\FRMVentanaInicial.class
+Manejador\Tarjeta.class
+com\mycompany\aircommerce\AirCommerce.class

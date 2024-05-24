@@ -4,6 +4,8 @@
  */
 package com.mycompany.vista;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Healer
@@ -15,6 +17,11 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
      */
     public FRMVentanaInicial() {
         initComponents();
+    }
+    
+    public void escucharBoton(ActionListener manejador){
+        this.jbAceptar.addActionListener(manejador);
+        this.jbExit.addActionListener(manejador);
     }
 
     /**
@@ -32,8 +39,8 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         CuadradoAzulInfo = new javax.swing.JLabel();
-        jbLogin1 = new javax.swing.JButton();
-        jbLogin = new javax.swing.JButton();
+        jbExit = new javax.swing.JButton();
+        jbAceptar = new javax.swing.JButton();
         Logo = new javax.swing.JLabel();
         CuadradoBlanco = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -62,15 +69,15 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
         CuadradoAzulInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/RectanguloAzulLogin.png"))); // NOI18N
         Fondo.add(CuadradoAzulInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
 
-        jbLogin1.setBackground(new java.awt.Color(153, 153, 153));
-        jbLogin1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jbLogin1.setText("Salir");
-        Fondo.add(jbLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 390, 60));
+        jbExit.setBackground(new java.awt.Color(153, 153, 153));
+        jbExit.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jbExit.setText("Salir");
+        Fondo.add(jbExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 390, 60));
 
-        jbLogin.setBackground(new java.awt.Color(51, 51, 255));
-        jbLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jbLogin.setText("Aceptar");
-        Fondo.add(jbLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 390, 60));
+        jbAceptar.setBackground(new java.awt.Color(51, 51, 255));
+        jbAceptar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jbAceptar.setText("Aceptar");
+        Fondo.add(jbAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 390, 60));
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/logo 1.png"))); // NOI18N
         Fondo.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 140, -1));
@@ -114,7 +121,7 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton jbLogin;
-    private javax.swing.JButton jbLogin1;
+    private javax.swing.JButton jbAceptar;
+    private javax.swing.JButton jbExit;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,9 @@
 package com.mycompany.vista;
+
+import Manejador.Cliente;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 public class FRMPaginaPrincipal extends javax.swing.JFrame {
     public FRMPaginaPrincipal() {
         initComponents();
@@ -11,7 +16,7 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CuadradoAzulInfo = new javax.swing.JLabel();
-        jbLogin1 = new javax.swing.JButton();
+        jbRegister = new javax.swing.JButton();
         jbLogin = new javax.swing.JButton();
         jtPassword = new javax.swing.JTextField();
         Password = new javax.swing.JLabel();
@@ -42,10 +47,10 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         CuadradoAzulInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/RectanguloAzulLogin.png"))); // NOI18N
         Fondo.add(CuadradoAzulInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
 
-        jbLogin1.setBackground(new java.awt.Color(153, 153, 153));
-        jbLogin1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jbLogin1.setText("Register");
-        Fondo.add(jbLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 390, 40));
+        jbRegister.setBackground(new java.awt.Color(153, 153, 153));
+        jbRegister.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jbRegister.setText("Register");
+        Fondo.add(jbRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 390, 40));
 
         jbLogin.setBackground(new java.awt.Color(51, 51, 255));
         jbLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -105,7 +110,23 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+public void escucharBotones(ActionListener manejador){
+    this.jbLogin.addActionListener(manejador);
+    this.jbRegister.addActionListener(manejador);
+}
 
+public void setLogin(Cliente cliente){
+    jtUsername.setText(cliente.getId());
+    jtPassword.setText(cliente.getPassword());
+}
+
+public void limpiarLogin(){
+    
+}
+
+public void getMensaje(){
+    JOptionPane.showMessageDialog(null, "Login correcto");
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CuadradoAzul;
     private javax.swing.JLabel CuadradoAzulInfo;
@@ -121,7 +142,7 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbLogin;
-    private javax.swing.JButton jbLogin1;
+    private javax.swing.JButton jbRegister;
     private javax.swing.JTextField jtPassword;
     private javax.swing.JTextField jtUsername;
     // End of variables declaration//GEN-END:variables

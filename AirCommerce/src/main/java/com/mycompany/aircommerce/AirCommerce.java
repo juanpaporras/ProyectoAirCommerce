@@ -1,7 +1,11 @@
 package com.mycompany.aircommerce;
+
+import Controlador.manejador_ventInicial;
+import com.mycompany.vista.FRMVentanaInicial;
+
 public class AirCommerce {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new manejador_ventInicial();
     }
 }
