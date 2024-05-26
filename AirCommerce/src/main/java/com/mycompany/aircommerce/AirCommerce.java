@@ -1,5 +1,4 @@
 package com.mycompany.aircommerce;
-
 import Controlador.manejador_ventInicial;
 import com.mycompany.vista.FRMVentanaInicial;
 

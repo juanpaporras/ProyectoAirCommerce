@@ -28,16 +28,14 @@ public class manejador_ventInicial implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Aceptar":
-                paginaPrin = new FRMPaginaPrincipal();
-                this.paginaPrin.setVisible(true);
-                paginaPrin.escucharBotones(this);
+                new manejador_PagPrin();
+                JOptionPane.showMessageDialog(null, "hola");
                 break;
-                
             case "Salir":
                 System.exit(0);
                 break;
             default:
-                throw new AssertionError();
+
         }
     }
     

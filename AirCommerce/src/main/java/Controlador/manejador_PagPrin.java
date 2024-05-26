@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class manejador_PagPrin implements ActionListener{
     private FRMPaginaPrincipal paginaPrin;
-    private manejador_ventInicial ventanaInicial;
+    //private manejador_ventInicial ventanaInicial;
     
     public manejador_PagPrin(){
         paginaPrin = new FRMPaginaPrincipal();
@@ -27,10 +27,16 @@ public class manejador_PagPrin implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Login":
-                JOptionPane.showMessageDialog(null,"hola");
+                //hace busqueda del usuario 
+                JOptionPane.showMessageDialog(null,"holaaaaa");
                 break;
+            case "Register":
+                JOptionPane.showMessageDialog(null,"ho");
+                
+                break;
+                
             default:
-                throw new AssertionError();
+                
         }
     }
 }
