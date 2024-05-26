@@ -29,7 +29,6 @@ public class manejador_ventInicial implements ActionListener{
         switch (e.getActionCommand()) {
             case "Aceptar":
                 new manejador_PagPrin();
-                JOptionPane.showMessageDialog(null, "hola");
                 break;
             case "Salir":
                 System.exit(0);
