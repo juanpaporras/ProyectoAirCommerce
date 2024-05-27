@@ -1,11 +1,15 @@
 com\mycompany\vista\FRMRegistroVuelos.class
+Manejador\Persona.class
+Manejador\Tarjeta.class
+Modelo\RegistroTarjeta.class
+com\mycompany\vista\FRMAgregarComprador.class
+Controlador\RegistroPersona.class
 Controlador\manejador_ventInicial.class
+Controlador\manejador_PagPrin.class
 Modelo\RegistroVuelo.class
 com\mycompany\vista\FRMAgregarVendedor.class
 com\mycompany\vista\FRMPagos.class
 Manejador\Vuelo.class
 com\mycompany\vista\FRMPaginaPrincipal.class
 com\mycompany\vista\FRMVentanaInicial.class
-Manejador\Persona.class
-Manejador\Tarjeta.class
 com\mycompany\aircommerce\AirCommerce.class
