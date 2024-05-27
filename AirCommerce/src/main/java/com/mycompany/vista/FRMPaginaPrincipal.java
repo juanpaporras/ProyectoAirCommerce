@@ -1,6 +1,6 @@
 package com.mycompany.vista;
 
-import Manejador.Cliente;
+import Manejador.Persona;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -115,7 +115,7 @@ public void escucharBotones(ActionListener manejador){
     this.jbRegister.addActionListener(manejador);
 }
 
-public void setLogin(Cliente cliente){
+public void setLogin(Persona cliente){
     jtUsername.setText(cliente.getId());
     jtPassword.setText(cliente.getPassword());
 }

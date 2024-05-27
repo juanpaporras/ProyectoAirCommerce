@@ -8,11 +8,11 @@ package Manejador;
  *
  * @author alfar
  */
-public class Cliente {
+public class Persona {
     private String id, nombre, password;
     private int edad;
 
-    public Cliente(String id, String nombre, String password, int edad) {
+    public Persona(String id, String nombre, String password, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
