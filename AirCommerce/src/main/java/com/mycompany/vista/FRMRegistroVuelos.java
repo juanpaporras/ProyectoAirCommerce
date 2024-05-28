@@ -2,7 +2,15 @@ package com.mycompany.vista;
 
 import Manejador.Vuelo;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 public class FRMRegistroVuelos extends javax.swing.JFrame {
@@ -16,7 +24,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tDatosVuelo = new javax.swing.JTable();
         jtPrecio = new javax.swing.JTextField();
         jtAerolinea = new javax.swing.JTextField();
         btnEditar = new javax.swing.JButton();
@@ -46,20 +54,16 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(153, 153, 153));
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+        tDatosVuelo.setBackground(new java.awt.Color(153, 153, 153));
+        tDatosVuelo.setForeground(new java.awt.Color(0, 0, 0));
+        tDatosVuelo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {},
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Número de Vuelo", "Origen", "Destino", "Salida", "Llegada", "Precio", "Aerolínea"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tDatosVuelo);
+        jScrollPane1.setViewportView(tDatosVuelo);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 860, 260));
 
@@ -148,13 +152,14 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     public void escucharBotones(ActionListener manejador) {
         this.btnBuscar.addActionListener(manejador);
         this.btnEditar.addActionListener(manejador);
         this.btnEliminar.addActionListener(manejador);
         this.btnGuardar.addActionListener(manejador);
     }
+    
     public void setVuelo(Vuelo vuelo){
         jtNumeroVuelo.setText(vuelo.getNum_vuelo());
         jtOrigen.setText(vuelo.getOrigen());
@@ -179,6 +184,39 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     public void getMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
+    public void cargarDatosDesdeJSON(String filePath) {
+        JSONParser parser = new JSONParser();
+        try (FileReader reader = new FileReader(filePath)) {
+            Object obj = parser.parse(reader);
+            JSONArray vuelosList = (JSONArray) obj;
+            DefaultTableModel model = (DefaultTableModel) tDatosVuelo.getModel();
+            model.setRowCount(0); // Limpiar tabla
+
+            // Iterar sobre los objetos en el JSON y agregarlos a la tabla
+            for (Object vueloObj : vuelosList) {
+                JSONObject vueloJSON = (JSONObject) vueloObj;
+                String numVuelo = (String) vueloJSON.get("Numero vuelo");
+                String aerolinea = (String) vueloJSON.get("Aerolinea");
+                String origen = (String) vueloJSON.get("Origen");
+                String destino = (String) vueloJSON.get("Destino");
+
+                Long salida = vueloJSON.get("Salida") != null ? (Long) vueloJSON.get("Salida") : 0L;
+                Long llegada = vueloJSON.get("Llegada") != null ? (Long) vueloJSON.get("Llegada") : 0L;
+                Long precio = vueloJSON.get("Precio vuelo") != null ? (Long) vueloJSON.get("Precio vuelo") : 0L;
+
+                model.addRow(new Object[]{numVuelo, aerolinea, origen, destino, salida, llegada, precio});
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            getMensaje("Archivo no encontrado: " + filePath);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+            getMensaje("Error al cargar datos desde el archivo JSON.");
+        }
+    }
+ 
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Aerolinea;
     private javax.swing.JLabel CuadroAzul;
@@ -196,7 +234,6 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jtAerolinea;
     private javax.swing.JTextField jtDestino;
     private javax.swing.JTextField jtLlegada;
@@ -204,5 +241,6 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JTextField jtOrigen;
     private javax.swing.JTextField jtPrecio;
     private javax.swing.JTextField jtSalida;
+    private javax.swing.JTable tDatosVuelo;
     // End of variables declaration//GEN-END:variables
 }

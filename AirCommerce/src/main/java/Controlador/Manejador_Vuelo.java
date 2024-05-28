@@ -5,7 +5,7 @@
 package Controlador;
 
 import Manejador.Vuelo;
-import Modelo.RegistroVuelo;
+import Controlador.RegistroVuelo;
 import com.mycompany.vista.FRMRegistroVuelos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +22,7 @@ public class Manejador_Vuelo implements ActionListener{
     
     public Manejador_Vuelo(){
         vuelos = new FRMRegistroVuelos();
+        vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
         this.registroV=new RegistroVuelo();
 
         this.vuelos.escucharBotones(this);
@@ -43,17 +44,23 @@ public class Manejador_Vuelo implements ActionListener{
                     this.vuelos.limpiar();
 
                 }
-                
-                JOptionPane.showMessageDialog(null, "ffadasd");
-                //new FRMRegistroVuelos();
                 break;
             case "Editar":
+                
                 
                 break;
             case "Buscar":
                 
                 break;
             case "Eliminar":
+                this.vuelo = this.vuelos.getVuelo();
+                if (vuelo != null) {
+
+                    vuelos.getMensaje(this.registroV.elimina(this.vuelo));
+                    this.vuelos.limpiar();
+                } else {
+                    vuelos.getMensaje("Seleccione una cancion");
+                }
                 
                 break;
             default:
