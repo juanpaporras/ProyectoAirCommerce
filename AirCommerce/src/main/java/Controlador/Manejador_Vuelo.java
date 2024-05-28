@@ -63,6 +63,9 @@ public class Manejador_Vuelo implements ActionListener{
                 }
                 
                 break;
+            case"Refrescar Tabla":
+                
+                break;
             default:
                 JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");
         }

@@ -27,6 +27,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         tDatosVuelo = new javax.swing.JTable();
         jtPrecio = new javax.swing.JTextField();
         jtAerolinea = new javax.swing.JTextField();
+        btnRefrescarTabla = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
@@ -36,6 +37,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtNumeroVuelo = new javax.swing.JTextField();
         jtSalida = new javax.swing.JTextField();
         jtLlegada = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         Origen = new javax.swing.JLabel();
         Salida = new javax.swing.JLabel();
         Aerolinea = new javax.swing.JLabel();
@@ -56,14 +58,15 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
 
         tDatosVuelo.setBackground(new java.awt.Color(153, 153, 153));
         tDatosVuelo.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tDatosVuelo);
+        tDatosVuelo.setBackground(new java.awt.Color(153, 153, 153));
+        tDatosVuelo.setForeground(new java.awt.Color(0, 0, 0));
         tDatosVuelo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
             new String [] {
-                "Número de Vuelo", "Origen", "Destino", "Salida", "Llegada", "Precio", "Aerolínea"
+                "Número de Vuelo", "Aerolinea", "Origen", "Destino", "Salida", "Llegada", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(tDatosVuelo);
-        jScrollPane1.setViewportView(tDatosVuelo);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 860, 260));
 
@@ -75,21 +78,30 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtAerolinea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel1.add(jtAerolinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 290, 30));
 
+        btnRefrescarTabla.setBackground(new java.awt.Color(51, 51, 255));
+        btnRefrescarTabla.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRefrescarTabla.setText("Refrescar Tabla");
+        jPanel1.add(btnRefrescarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 210, 50));
+
         btnEditar.setBackground(new java.awt.Color(51, 51, 255));
+        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEditar.setText("Editar");
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 210, -1));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 210, -1));
 
         btnEliminar.setBackground(new java.awt.Color(51, 51, 255));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 370, 200, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 360, 200, -1));
 
         btnBuscar.setBackground(new java.awt.Color(51, 51, 255));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBuscar.setText("Buscar");
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, 210, -1));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 210, -1));
 
         btnGuardar.setBackground(new java.awt.Color(51, 51, 255));
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnGuardar.setText("Guardar");
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 200, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 200, -1));
 
         jtDestino.setBackground(new java.awt.Color(153, 153, 153));
         jtDestino.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -110,6 +122,9 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtLlegada.setBackground(new java.awt.Color(153, 153, 153));
         jtLlegada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel1.add(jtLlegada, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 290, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgsInterfaces/Precio Vuelo en $.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, -1, -1));
 
         Origen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgsInterfaces/Origen.png"))); // NOI18N
         jPanel1.add(Origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
@@ -231,6 +246,8 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnRefrescarTabla;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
