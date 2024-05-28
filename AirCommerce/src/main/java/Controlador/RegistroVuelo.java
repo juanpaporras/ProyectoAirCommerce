@@ -76,15 +76,15 @@ public class RegistroVuelo {
                 escribirJSON();
                 mensaje = "Se ha agregado correctamente";
             } else {
-                mensaje = "La persona ya se encuentra agregada";
+                mensaje = "Ese vuelo ya se encuentra agregado";
             }
         }
         return mensaje;
     }
 
-    public Vuelo buscaPersona(String id) {
+    public Vuelo buscaPersona(String numeroVuelo) {
         for (Vuelo miVuelo : listaVuelos) {
-            if (miVuelo.getNum_vuelo().equalsIgnoreCase(id)) {
+            if (miVuelo.getNum_vuelo().equalsIgnoreCase(numeroVuelo)) {
                 return miVuelo;
             }
         }

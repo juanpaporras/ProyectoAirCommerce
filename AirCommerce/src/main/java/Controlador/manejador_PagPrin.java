@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Manejador.Persona;
 import com.mycompany.vista.FRMPaginaPrincipal;
 import com.mycompany.vista.FRMRegistroVuelos;
 import java.awt.event.ActionEvent;
@@ -16,10 +17,12 @@ import javax.swing.JOptionPane;
  */
 public class manejador_PagPrin implements ActionListener{
     private FRMPaginaPrincipal paginaPrin;
+    private RegistroPersona registroP;
     //private manejador_ventInicial ventanaInicial;
     
     public manejador_PagPrin(){
         paginaPrin = new FRMPaginaPrincipal();
+        this.registroP = new RegistroPersona();
         this.paginaPrin.escucharBotones(this);
         this.paginaPrin.setVisible(true);
     }
@@ -28,11 +31,18 @@ public class manejador_PagPrin implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Login":
-                //hace busqueda del usuario 
-                JOptionPane.showMessageDialog(null,"a");
+                String usuario= paginaPrin.getUsuario();
+                Persona vueloEncontrado = this.registroP.buscaPersona(usuario);
+                if (vueloEncontrado != null) {
+                    this.paginaPrin.setLogin(vueloEncontrado);
+                    paginaPrin.getMensaje("Iniciando Sesion Bienvenido!");
+                } else {
+                    paginaPrin.getMensaje("No se pudo encontrar el nombre de usuario");
+                }
                 break;
             case "Register":
-                JOptionPane.showMessageDialog(null,"ho");
+                new manejador_VentanaComprador();
+                
                 
                 break;
                 

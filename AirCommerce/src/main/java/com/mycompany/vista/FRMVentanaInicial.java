@@ -22,8 +22,12 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
     public void escucharBoton(ActionListener manejador){
         this.jbAceptar.addActionListener(manejador);
         this.jbExit.addActionListener(manejador);
+        this.jcOpciones.addActionListener(manejador);
     }
-
+    public String devolverCombo() {
+        return jcOpciones.getSelectedItem().toString();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +39,7 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
 
         Fondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcOpciones = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         CuadradoAzulInfo = new javax.swing.JLabel();
@@ -55,10 +59,10 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Air Commerce.png"))); // NOI18N
         Fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comprar Vuelos", "Registro y administracion de vuelos" }));
-        Fondo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 360, 50));
+        jcOpciones.setBackground(new java.awt.Color(153, 153, 153));
+        jcOpciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jcOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comprar Vuelos", "Registro y administracion de vuelos" }));
+        Fondo.add(jcOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 360, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Ingrese una opcion para el metodo de ingreso.png"))); // NOI18N
         Fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, -1, -1));
@@ -116,12 +120,12 @@ public class FRMVentanaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel CuadradoBlanco;
     private javax.swing.JPanel Fondo;
     private javax.swing.JLabel Logo;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JButton jbAceptar;
     private javax.swing.JButton jbExit;
+    private javax.swing.JComboBox<String> jcOpciones;
     // End of variables declaration//GEN-END:variables
 }

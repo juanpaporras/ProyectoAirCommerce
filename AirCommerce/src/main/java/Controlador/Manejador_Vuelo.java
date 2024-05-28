@@ -34,46 +34,56 @@ public class Manejador_Vuelo implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case "Guardar":
-                this.vuelo = this.vuelos.getVuelo();
+    switch (e.getActionCommand()) {
+        case "Guardar":
+            this.vuelo = this.vuelos.getVuelo();
 
-                if (this.validarCampos(this.vuelo)) {
-
-                    vuelos.getMensaje(this.registroV.agrega(this.vuelo));
-                    this.vuelos.limpiar();
-
-                }
-                vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
-                break;
-            case "Editar":
-                
-                
-                break;
-            case "Buscar":
-                
-                break;
-            case "Eliminar":
-                this.vuelo = this.vuelos.getVuelo();
-                if (vuelo != null) {
-
-                    vuelos.getMensaje(this.registroV.elimina(this.vuelo));
-                    this.vuelos.limpiar();
-                } else {
-                    vuelos.getMensaje("Seleccione una cancion");
-                }
-                
-                break;
-            case"Refrescar Tabla":
-                  vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
-          
-
-
-                break;
-            default:
-                JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");
-        }
+            if (this.validarCampos(this.vuelo)) {
+                vuelos.getMensaje(this.registroV.agrega(this.vuelo));
+                this.vuelos.limpiar();
+            } else {
+                vuelos.getMensaje("Todos los campos deben estar llenos.");
+            }
+            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            break;
+        case "Editar":
+            this.vuelo = this.vuelos.getVuelo();
+            if (this.validarCampos(vuelo)) {
+                vuelos.getMensaje(this.registroV.modificar(this.vuelo));
+                this.vuelos.limpiar();
+            } else {
+                vuelos.getMensaje("Todos los campos deben estar llenos.");
+            }
+            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            break;
+        case "Buscar":
+            String numeroVuelo = JOptionPane.showInputDialog("Ingrese el número de vuelo a buscar:");
+            Vuelo vueloEncontrado = this.registroV.buscaPersona(numeroVuelo);
+            if (vueloEncontrado != null) {
+                this.vuelos.setVuelo(vueloEncontrado);
+                vuelos.getMensaje("Vuelo encontrado y cargado en el formulario.");
+            } else {
+                vuelos.getMensaje("Vuelo no encontrado.");
+            }
+            break;
+        case "Eliminar":
+            this.vuelo = this.vuelos.getVuelo();
+            if (vuelo != null) {
+                vuelos.getMensaje(this.registroV.elimina(this.vuelo));
+                this.vuelos.limpiar();
+            } else {
+                vuelos.getMensaje("Seleccione un vuelo.");
+            }
+            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            break;
+        case "Salir":
+            vuelos.dispose();
+            break;
+        default:
+            JOptionPane.showMessageDialog(null, "Ingrese una opción válida.");
     }
+}
+
     public boolean validarCampos(Vuelo vuelo) {
     if (vuelo.getNum_vuelo().isEmpty() || 
         vuelo.getOrigen().isEmpty() || 

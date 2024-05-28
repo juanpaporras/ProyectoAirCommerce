@@ -9,30 +9,20 @@ package Manejador;
  * @author alfar
  */
 public class Persona {
-    private String id, nombre, password;
-    private int edad;
+    private String nombreUser, password, genero;
 
-    public Persona(String id, String nombre, String password, int edad) {
-        this.id = id;
-        this.nombre = nombre;
+    public Persona(String nombreUser, String password, String genero) {
+        this.nombreUser = nombreUser;
         this.password = password;
-        this.edad = edad;
+        this.genero = genero;
     }
 
-    public String getId() {
-        return id;
+    public String getNombreUser() {
+        return nombreUser;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreUser(String nombreUser) {
+        this.nombreUser = nombreUser;
     }
 
     public String getPassword() {
@@ -43,18 +33,21 @@ public class Persona {
         this.password = password;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", password=" + password + ", edad=" + edad + '}';
+        return "Persona{" + "nombreUser=" + nombreUser + ", password=" + password + ", genero=" + genero + '}';
     }
+    
+    
+
 
     
 }

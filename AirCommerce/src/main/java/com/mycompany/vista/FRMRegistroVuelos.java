@@ -28,6 +28,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtPrecio = new javax.swing.JTextField();
         jtAerolinea = new javax.swing.JTextField();
         btnEditar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -81,6 +82,11 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEditar.setText("Editar");
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 210, -1));
+
+        btnSalir.setBackground(new java.awt.Color(51, 51, 255));
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSalir.setText("Salir");
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 210, 290, 60));
 
         btnEliminar.setBackground(new java.awt.Color(51, 51, 255));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -167,6 +173,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         this.btnEditar.addActionListener(manejador);
         this.btnEliminar.addActionListener(manejador);
         this.btnGuardar.addActionListener(manejador);
+        this.btnSalir.addActionListener(manejador);
     }
     
     public void setVuelo(Vuelo vuelo){
@@ -179,9 +186,23 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtAerolinea.setText(""+vuelo.getAerolinea());
         
     }
-    public Vuelo getVuelo(){
-        return new Vuelo(jtNumeroVuelo.getText(), jtOrigen.getText(), jtDestino.getText(),Integer.parseInt(this.jtSalida.getText()),Integer.parseInt(this.jtLlegada.getText()),Integer.parseInt(this.jtPrecio.getText()),jtAerolinea.getText());   
+    public Vuelo getVuelo() {
+        try {
+            String numVuelo = jtNumeroVuelo.getText();
+            String origen = jtOrigen.getText();
+            String destino = jtDestino.getText();
+            int salida = Integer.parseInt(jtSalida.getText());
+            int llegada = Integer.parseInt(jtLlegada.getText());
+            int precio = Integer.parseInt(jtPrecio.getText());
+            String aerolinea = jtAerolinea.getText();
+
+            return new Vuelo(numVuelo, origen, destino, salida, llegada, precio, aerolinea);
+        } catch (NumberFormatException e) {
+            getMensaje("Porfavor rellene todos los espacios para continuar.");
+            return null;
+        }
     }
+
     public void limpiar (){
         jtAerolinea.setText("");
         jtDestino.setText("");
@@ -241,6 +262,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

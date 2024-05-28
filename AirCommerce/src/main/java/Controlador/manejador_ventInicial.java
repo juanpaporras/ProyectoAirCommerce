@@ -28,10 +28,21 @@ public class manejador_ventInicial implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Aceptar":
-                new manejador_PagPrin();
+                String opcionSeleccionada = pruebaPrincipal.devolverCombo();
+                if (opcionSeleccionada.equals("Comprar Vuelos")) {
+                    new manejador_PagPrin();
+                    System.out.println("Opción seleccionada: Comprar Vuelos");
+                } else if (opcionSeleccionada.equals("Registro y administracion de vuelos")) {
+                    System.err.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                    System.out.println("Opción seleccionada: Registro y administracion de vuelos");
+                }
                 break;
             case "Salir":
                 System.exit(0);
+                break;
+            case "comboBoxChanged":
+                 
+
                 break;
             default:
 

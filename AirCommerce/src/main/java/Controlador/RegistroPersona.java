@@ -16,7 +16,7 @@ import org.json.simple.parser.ParseException;
  */
 public class RegistroPersona {
     private String mensaje;
-    private String filePath = "RegistroPersona.json";
+    private String filePath = "registroPersona.json";
     ArrayList<Persona> listaPersonas;
 
     public RegistroPersona() {
@@ -29,10 +29,9 @@ public class RegistroPersona {
         for (int i = 0; i < listaPersonas.size(); i++) {
             JSONObject newObject = new JSONObject();
             Persona persona = listaPersonas.get(i);
-            newObject.put("id", persona.getId());
-            newObject.put("nombre", persona.getNombre());
+            newObject.put("id", persona.getNombreUser());
             newObject.put("password", persona.getPassword());
-            newObject.put("edad", persona.getEdad());
+            newObject.put("genero", persona.getGenero());
 
             jsonArray.add(newObject);
         }
@@ -54,10 +53,9 @@ public class RegistroPersona {
             for (Object object : jsonArray) {
                 JSONObject jsonObject = (JSONObject) object;
                 String id = (String) jsonObject.get("id");
-                String nombre = (String) jsonObject.get("nombre");
+                String genero = (String) jsonObject.get("genero");
                 String password = (String) jsonObject.get("password");
-                long edad = (long) jsonObject.get("edad");
-                Persona persona = new Persona(id, nombre, password, (int) edad);
+                Persona persona = new Persona(id, genero, password);
                 listaP.add(persona);
             }
         } catch (IOException | ParseException e) {
@@ -70,7 +68,7 @@ public class RegistroPersona {
         if (persona == null) {
             mensaje = "No se puede agregar una persona nula.";
         } else {
-            if (buscaPersona(persona.getId()) == null) {
+            if (buscaPersona(persona.getNombreUser()) == null) {
                 listaPersonas.add(persona);
                 escribirJSON();
                 mensaje = "Se ha agregado correctamente.";
@@ -83,7 +81,7 @@ public class RegistroPersona {
 
     public Persona buscaPersona(String id) {
         for (Persona persona : listaPersonas) {
-            if (persona.getId().equalsIgnoreCase(id)) {
+            if (persona.getNombreUser().equalsIgnoreCase(id)) {
                 return persona;
             }
         }
@@ -101,7 +99,7 @@ public class RegistroPersona {
     }
 
     public String modificar(Persona persona) {
-        if (buscaPersona(persona.getId()) != null) {
+        if (buscaPersona(persona.getNombreUser()) != null) {
             elimina(persona);
             agrega(persona);
             escribirJSON();

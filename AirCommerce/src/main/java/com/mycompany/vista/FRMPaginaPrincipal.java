@@ -116,16 +116,19 @@ public void escucharBotones(ActionListener manejador){
 }
 
 public void setLogin(Persona cliente){
-    jtUsername.setText(cliente.getId());
+    jtUsername.setText(cliente.getNombreUser());
     jtPassword.setText(cliente.getPassword());
+}
+public String getUsuario() {
+    return jtUsername.getText();
 }
 
 public void limpiarLogin(){
     
 }
 
-public void getMensaje(){
-    JOptionPane.showMessageDialog(null, "Login correcto");
+public void getMensaje(String mensaje){
+    JOptionPane.showMessageDialog(null, mensaje);
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CuadradoAzul;
