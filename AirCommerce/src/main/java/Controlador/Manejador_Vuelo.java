@@ -7,6 +7,7 @@ package Controlador;
 import com.mycompany.vista.FRMRegistroVuelos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,11 +25,21 @@ public class Manejador_Vuelo implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "Login":
-                new FRMRegistroVuelos();
+            case "Guardar":
+                JOptionPane.showMessageDialog(null, "ffadasd");
+                //new FRMRegistroVuelos();
+                break;
+            case "Editar":
+                
+                break;
+            case "Buscar":
+                
+                break;
+            case "Eliminar":
+                
                 break;
             default:
-                throw new AssertionError();
+                JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");
         }
     }
     

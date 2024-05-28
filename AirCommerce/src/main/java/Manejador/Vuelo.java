@@ -9,10 +9,10 @@ package Manejador;
  * @author alfar
  */
 public class Vuelo {
-    private int num_vuelo, origen, destino, salida, llegada, precio_vuelo;
-    private String aerolinea;
+    private int num_vuelo, salida, llegada, precio_vuelo;
+    private String origen, destino, aerolinea;
 
-    public Vuelo(int num_vuelo, int origen, int destino, int salida, int llegada, int precio_vuelo, String aerolinea) {
+    public Vuelo(int num_vuelo, String origen, String destino, int salida, int llegada, int precio_vuelo, String aerolinea) {
         this.num_vuelo = num_vuelo;
         this.origen = origen;
         this.destino = destino;
@@ -30,19 +30,19 @@ public class Vuelo {
         this.num_vuelo = num_vuelo;
     }
 
-    public int getOrigen() {
+    public String getOrigen() {
         return origen;
     }
 
-    public void setOrigen(int origen) {
+    public void setOrigen(String origen) {
         this.origen = origen;
     }
 
-    public int getDestino() {
+    public String getDestino() {
         return destino;
     }
 
-    public void setDestino(int destino) {
+    public void setDestino(String destino) {
         this.destino = destino;
     }
 
@@ -80,9 +80,14 @@ public class Vuelo {
 
     @Override
     public String toString() {
-        return "Vuelo{" + "num_vuelo=" + num_vuelo + ", origen=" + origen + ", destino=" + destino + ", salida=" + salida + ", llegada=" + llegada + ", precio_vuelo=" + precio_vuelo + ", aerolinea=" + aerolinea + '}';
+        return "Vuelo{" +
+                "num_vuelo=" + num_vuelo +
+                ", origen='" + origen + '\'' +
+                ", destino='" + destino + '\'' +
+                ", salida=" + salida +
+                ", llegada=" + llegada +
+                ", precio_vuelo=" + precio_vuelo +
+                ", aerolinea='" + aerolinea + '\'' +
+                '}';
     }
-
-    
-    
 }
