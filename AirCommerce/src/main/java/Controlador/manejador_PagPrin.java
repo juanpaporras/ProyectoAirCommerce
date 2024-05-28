@@ -5,6 +5,7 @@
 package Controlador;
 
 import com.mycompany.vista.FRMPaginaPrincipal;
+import com.mycompany.vista.FRMRegistroVuelos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -28,7 +29,7 @@ public class manejador_PagPrin implements ActionListener{
         switch (e.getActionCommand()) {
             case "Login":
                 //hace busqueda del usuario 
-                JOptionPane.showMessageDialog(null,"holaaaaa");
+                JOptionPane.showMessageDialog(null,"a");
                 break;
             case "Register":
                 JOptionPane.showMessageDialog(null,"ho");

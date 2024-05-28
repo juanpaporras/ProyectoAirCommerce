@@ -1,4 +1,7 @@
 package com.mycompany.vista;
+
+import java.awt.event.ActionListener;
+
 public class FRMRegistroVuelos extends javax.swing.JFrame {
     public FRMRegistroVuelos() {
         initComponents();
@@ -138,7 +141,12 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    public void escucharBotones(ActionListener manejador){
+    this.btnBuscar.addActionListener(manejador);
+    this.btnEditar.addActionListener(manejador);
+    this.btnEliminar.addActionListener(manejador);
+    this.btnGuardar.addActionListener(manejador);
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Aerolinea;
     private javax.swing.JLabel CuadroAzul;
