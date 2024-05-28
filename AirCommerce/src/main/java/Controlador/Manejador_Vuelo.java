@@ -44,6 +44,7 @@ public class Manejador_Vuelo implements ActionListener{
                     this.vuelos.limpiar();
 
                 }
+                vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
                 break;
             case "Editar":
                 
@@ -64,7 +65,10 @@ public class Manejador_Vuelo implements ActionListener{
                 
                 break;
             case"Refrescar Tabla":
-                
+                  vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+          
+
+
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");

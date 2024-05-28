@@ -27,7 +27,6 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         tDatosVuelo = new javax.swing.JTable();
         jtPrecio = new javax.swing.JTextField();
         jtAerolinea = new javax.swing.JTextField();
-        btnRefrescarTabla = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
@@ -77,11 +76,6 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtAerolinea.setBackground(new java.awt.Color(153, 153, 153));
         jtAerolinea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel1.add(jtAerolinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 290, 30));
-
-        btnRefrescarTabla.setBackground(new java.awt.Color(51, 51, 255));
-        btnRefrescarTabla.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRefrescarTabla.setText("Refrescar Tabla");
-        jPanel1.add(btnRefrescarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 210, 50));
 
         btnEditar.setBackground(new java.awt.Color(51, 51, 255));
         btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -195,6 +189,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jtNumeroVuelo.setText("");
         jtOrigen.setText("");
         jtSalida.setText("");
+        jtPrecio.setText("");
     }
     public void getMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
@@ -246,7 +241,6 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnRefrescarTabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
