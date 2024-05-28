@@ -9,10 +9,10 @@ package Manejador;
  * @author alfar
  */
 public class Vuelo {
-    private int num_vuelo, salida, llegada, precio_vuelo;
-    private String origen, destino, aerolinea;
+    private String num_vuelo, origen, destino, aerolinea;
+    private int salida, llegada, precio_vuelo;
 
-    public Vuelo(int num_vuelo, String origen, String destino, int salida, int llegada, int precio_vuelo, String aerolinea) {
+    public Vuelo(String num_vuelo, String origen, String destino, int salida, int llegada, int precio_vuelo, String aerolinea) {
         this.num_vuelo = num_vuelo;
         this.origen = origen;
         this.destino = destino;
@@ -22,11 +22,11 @@ public class Vuelo {
         this.aerolinea = aerolinea;
     }
 
-    public int getNum_vuelo() {
+    public String getNum_vuelo() {
         return num_vuelo;
     }
 
-    public void setNum_vuelo(int num_vuelo) {
+    public void setNum_vuelo(String num_vuelo) {
         this.num_vuelo = num_vuelo;
     }
 
@@ -81,7 +81,7 @@ public class Vuelo {
     @Override
     public String toString() {
         return "Vuelo{" +
-                "num_vuelo=" + num_vuelo +
+                "num_vuelo='" + num_vuelo + '\'' +
                 ", origen='" + origen + '\'' +
                 ", destino='" + destino + '\'' +
                 ", salida=" + salida +
@@ -91,3 +91,4 @@ public class Vuelo {
                 '}';
     }
 }
+

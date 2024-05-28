@@ -1,6 +1,9 @@
 package com.mycompany.vista;
 
+import Manejador.Vuelo;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 
 public class FRMRegistroVuelos extends javax.swing.JFrame {
     public FRMRegistroVuelos() {
@@ -14,6 +17,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jtPrecio = new javax.swing.JTextField();
         jtAerolinea = new javax.swing.JTextField();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -58,6 +62,10 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 860, 260));
+
+        jtPrecio.setBackground(new java.awt.Color(153, 153, 153));
+        jtPrecio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(jtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 170, 290, 30));
 
         jtAerolinea.setBackground(new java.awt.Color(153, 153, 153));
         jtAerolinea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -141,12 +149,36 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void escucharBotones(ActionListener manejador){
-    this.btnBuscar.addActionListener(manejador);
-    this.btnEditar.addActionListener(manejador);
-    this.btnEliminar.addActionListener(manejador);
-    this.btnGuardar.addActionListener(manejador);
-}
+    public void escucharBotones(ActionListener manejador) {
+        this.btnBuscar.addActionListener(manejador);
+        this.btnEditar.addActionListener(manejador);
+        this.btnEliminar.addActionListener(manejador);
+        this.btnGuardar.addActionListener(manejador);
+    }
+    public void setVuelo(Vuelo vuelo){
+        jtNumeroVuelo.setText(vuelo.getNum_vuelo());
+        jtOrigen.setText(vuelo.getOrigen());
+        jtDestino.setText(vuelo.getDestino());
+        jtSalida.setText(""+vuelo.getSalida());
+        jtLlegada.setText(""+vuelo.getLlegada());
+        jtPrecio.setText(""+vuelo.getPrecio_vuelo());
+        jtAerolinea.setText(""+vuelo.getAerolinea());
+        
+    }
+    public Vuelo getVuelo(){
+        return new Vuelo(jtNumeroVuelo.getText(), jtOrigen.getText(), jtDestino.getText(),Integer.parseInt(this.jtSalida.getText()),Integer.parseInt(this.jtLlegada.getText()),Integer.parseInt(this.jtPrecio.getText()),jtAerolinea.getText());   
+    }
+    public void limpiar (){
+        jtAerolinea.setText("");
+        jtDestino.setText("");
+        jtLlegada.setText("");
+        jtNumeroVuelo.setText("");
+        jtOrigen.setText("");
+        jtSalida.setText("");
+    }
+    public void getMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Aerolinea;
     private javax.swing.JLabel CuadroAzul;
@@ -170,6 +202,7 @@ public class FRMRegistroVuelos extends javax.swing.JFrame {
     private javax.swing.JTextField jtLlegada;
     private javax.swing.JTextField jtNumeroVuelo;
     private javax.swing.JTextField jtOrigen;
+    private javax.swing.JTextField jtPrecio;
     private javax.swing.JTextField jtSalida;
     // End of variables declaration//GEN-END:variables
 }
