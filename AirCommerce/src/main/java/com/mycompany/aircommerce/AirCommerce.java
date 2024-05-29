@@ -7,6 +7,6 @@ import Controlador.manejador_ventInicial;
 public class AirCommerce {
 
     public static void main(String[] args) {
-        new manejador_VentanaVendedor();
+        new manejador_ventInicial();
     }
 }

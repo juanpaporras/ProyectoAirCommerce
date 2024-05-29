@@ -31,10 +31,10 @@ public class manejador_ventInicial implements ActionListener{
                 String opcionSeleccionada = pruebaPrincipal.devolverCombo();
                 if (opcionSeleccionada.equals("Comprar Vuelos")) {
                     new manejador_PagPrin();
-                    System.out.println("Opción seleccionada: Comprar Vuelos");
+                   
                 } else if (opcionSeleccionada.equals("Registro y administracion de vuelos")) {
-                    System.err.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-                    System.out.println("Opción seleccionada: Registro y administracion de vuelos");
+                    new manejador_PagPrincipalVendedor();
+                    
                 }
                 break;
             case "Salir":
