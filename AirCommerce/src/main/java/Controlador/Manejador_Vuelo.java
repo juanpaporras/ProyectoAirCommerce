@@ -22,7 +22,7 @@ public class Manejador_Vuelo implements ActionListener{
     
     public Manejador_Vuelo(){
         vuelos = new FRMRegistroVuelos();
-        vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+        vuelos.cargarDatosDesdeJSON("src\\main\\resources\\registroVuelos.json");
         this.registroV=new RegistroVuelo();
 
         this.vuelos.escucharBotones(this);
@@ -44,7 +44,7 @@ public class Manejador_Vuelo implements ActionListener{
             } else {
                 vuelos.getMensaje("Todos los campos deben estar llenos.");
             }
-            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            vuelos.cargarDatosDesdeJSON("src\\main\\resources\\registroVuelos.json");
             break;
         case "Editar":
             this.vuelo = this.vuelos.getVuelo();
@@ -54,7 +54,7 @@ public class Manejador_Vuelo implements ActionListener{
             } else {
                 vuelos.getMensaje("Todos los campos deben estar llenos.");
             }
-            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            vuelos.cargarDatosDesdeJSON("src\\main\\resources\\registroVuelos.json");
             break;
         case "Buscar":
             String numeroVuelo = JOptionPane.showInputDialog("Ingrese el número de vuelo a buscar:");
@@ -74,7 +74,7 @@ public class Manejador_Vuelo implements ActionListener{
             } else {
                 vuelos.getMensaje("Seleccione un vuelo.");
             }
-            vuelos.cargarDatosDesdeJSON("C:\\Users\\Juanp\\Documents\\GitHub\\ProyectoAirCommerce\\AirCommerce\\registroVuelos.json");
+            vuelos.cargarDatosDesdeJSON("src\\main\\resources\\registroVuelos.json");
             break;
         case "Salir":
             vuelos.dispose();
