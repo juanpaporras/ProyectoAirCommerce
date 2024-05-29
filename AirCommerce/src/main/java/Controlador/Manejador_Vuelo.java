@@ -5,7 +5,7 @@
 package Controlador;
 
 import Manejador.Vuelo;
-import Controlador.RegistroVuelo;
+import Manejador.RegistroVuelo;
 import com.mycompany.vista.FRMRegistroVuelos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

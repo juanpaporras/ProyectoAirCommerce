@@ -31,6 +31,7 @@ public class FRMPaginaPrincipalVendedor extends javax.swing.JFrame {
         CuadradoBlanco = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         CuadradoAzul = new javax.swing.JLabel();
+        jbAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -98,6 +99,11 @@ public class FRMPaginaPrincipalVendedor extends javax.swing.JFrame {
         CuadradoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/RectanguloAzulLogin.png"))); // NOI18N
         Fondo.add(CuadradoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, -1, -1));
 
+        jbAtras.setBackground(new java.awt.Color(51, 51, 255));
+        jbAtras.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jbAtras.setText("Atras");
+        Fondo.add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,6 +121,7 @@ public class FRMPaginaPrincipalVendedor extends javax.swing.JFrame {
     public void escucharBotones(ActionListener manejador) {
         this.jbLogin.addActionListener(manejador);
         this.jbRegister.addActionListener(manejador);
+        this.jbAtras.addActionListener(manejador);
     }
 
     public void setLogin(Persona cliente) {
@@ -149,6 +156,7 @@ public class FRMPaginaPrincipalVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbAtras;
     private javax.swing.JButton jbLogin;
     private javax.swing.JButton jbRegister;
     private javax.swing.JTextField jtPassword;

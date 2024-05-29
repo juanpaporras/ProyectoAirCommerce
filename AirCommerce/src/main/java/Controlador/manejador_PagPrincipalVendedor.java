@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Manejador.RegistroVendedor;
 import Manejador.Persona;
 import com.mycompany.vista.FRMPaginaPrincipalVendedor;
 import java.awt.event.ActionEvent;
@@ -32,6 +33,7 @@ public class manejador_PagPrincipalVendedor implements ActionListener {
                     vendedor.getMensaje("Iniciando Sesion Bienvenido!");
                     new Manejador_Vuelo();
                 } else {
+                    vendedor.limpiarLogin();
                     vendedor.getMensaje("No se pudo encontrar el nombre de usuario");
                 }
                 break;
@@ -40,6 +42,10 @@ public class manejador_PagPrincipalVendedor implements ActionListener {
                 
                 
                 break;
+            case "Atras":
+                vendedor.dispose();
+                break;
+                
                 
             default:
                 

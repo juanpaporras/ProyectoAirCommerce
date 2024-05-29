@@ -1,11 +1,13 @@
 
 package Controlador;
 
+import Manejador.RegistroVendedor;
 import Manejador.Persona;
 import com.mycompany.vista.FRMAgregarComprador;
 import com.mycompany.vista.FRMAgregarVendedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class manejador_VentanaVendedor implements ActionListener{
     private FRMAgregarVendedor comprador;
@@ -33,6 +35,7 @@ public class manejador_VentanaVendedor implements ActionListener{
             }
                 break;
             case "Salir":
+                JOptionPane.showMessageDialog(null, "Vuelva a la pantalla de inicio para poder iniciar sesion con su nuevo usuario");
                 comprador.dispose();
                 break;
                 

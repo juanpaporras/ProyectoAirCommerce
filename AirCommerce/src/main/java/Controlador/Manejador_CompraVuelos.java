@@ -4,7 +4,7 @@
  */
 package Controlador;
 
-import Controlador.RegistroVuelo;
+import Manejador.RegistroVuelo;
 import Manejador.Vuelo;
 import com.mycompany.vista.FRMCompraVuelos;
 import java.awt.event.ActionEvent;
@@ -44,7 +44,6 @@ public class Manejador_CompraVuelos implements ActionListener{
             vuelos.dispose();
             break;
         case "Pagar":
-            JOptionPane.showMessageDialog(null, "asdasdasd");
             new Manejador_Pagos();
             break;
         default:

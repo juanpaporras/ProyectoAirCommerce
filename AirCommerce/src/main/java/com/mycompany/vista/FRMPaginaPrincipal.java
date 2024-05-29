@@ -17,6 +17,7 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         CuadradoAzulInfo = new javax.swing.JLabel();
         jbRegister = new javax.swing.JButton();
+        jbAtras = new javax.swing.JButton();
         jbLogin = new javax.swing.JButton();
         jtPassword = new javax.swing.JTextField();
         Password = new javax.swing.JLabel();
@@ -51,6 +52,11 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
         jbRegister.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jbRegister.setText("Register");
         Fondo.add(jbRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 390, 40));
+
+        jbAtras.setBackground(new java.awt.Color(51, 51, 255));
+        jbAtras.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jbAtras.setText("Atras");
+        Fondo.add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, 40));
 
         jbLogin.setBackground(new java.awt.Color(51, 51, 255));
         jbLogin.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -111,8 +117,9 @@ public class FRMPaginaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 public void escucharBotones(ActionListener manejador){
-    this.jbLogin.addActionListener(manejador);
+    this.jbAtras.addActionListener(manejador);
     this.jbRegister.addActionListener(manejador);
+    this.jbLogin.addActionListener(manejador);
 }
 
 public void setLogin(Persona cliente){
@@ -124,6 +131,8 @@ public String getUsuario() {
 }
 
 public void limpiarLogin(){
+    jtPassword.setText("");
+    jtUsername.setText("");
     
 }
 
@@ -144,6 +153,7 @@ public void getMensaje(String mensaje){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbAtras;
     private javax.swing.JButton jbLogin;
     private javax.swing.JButton jbRegister;
     private javax.swing.JTextField jtPassword;

@@ -1,4 +1,4 @@
-package Controlador;
+package Manejador;
 
 import Manejador.Persona;
 import java.io.FileReader;

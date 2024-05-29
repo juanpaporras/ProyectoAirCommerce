@@ -1,4 +1,4 @@
-package Controlador;
+package Manejador;
 
 import Manejador.Vuelo;
 import org.json.simple.JSONArray;

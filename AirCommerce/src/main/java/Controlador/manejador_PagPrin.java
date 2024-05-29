@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Manejador.RegistroPersona;
 import Manejador.Persona;
 import com.mycompany.vista.FRMPaginaPrincipal;
 import com.mycompany.vista.FRMRegistroVuelos;
@@ -37,14 +38,19 @@ public class manejador_PagPrin implements ActionListener{
                     this.paginaPrin.setLogin(vueloEncontrado);
                     paginaPrin.getMensaje("Iniciando Sesion Bienvenido!");
                     new Manejador_CompraVuelos();
+                    paginaPrin.limpiarLogin();
                 } else {
                     paginaPrin.getMensaje("No se pudo encontrar el nombre de usuario");
+                    paginaPrin.limpiarLogin();
                 }
                 break;
             case "Register":
                 new manejador_VentanaComprador();
                 
                 
+                break;
+            case "Atras":
+                paginaPrin.dispose();
                 break;
                 
             default:
