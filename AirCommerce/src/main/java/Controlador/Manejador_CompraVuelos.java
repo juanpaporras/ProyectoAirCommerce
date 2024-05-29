@@ -21,7 +21,7 @@ public class Manejador_CompraVuelos implements ActionListener{
     private Vuelo vuelo;
     public Manejador_CompraVuelos(){
         vuelos= new FRMCompraVuelos();
-        vuelos.cargarDatosDesdeJSON("src\\main\\resources\\registroVuelos.json");
+        vuelos.cargarDatosDesdeJSON("registroVuelos.json");
         this.registroV=new RegistroVuelo();
         this.vuelos.escucharBotones(this);
         this.vuelos.setVisible(true);
