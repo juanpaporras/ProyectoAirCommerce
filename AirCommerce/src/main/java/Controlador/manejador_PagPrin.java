@@ -36,6 +36,7 @@ public class manejador_PagPrin implements ActionListener{
                 if (vueloEncontrado != null) {
                     this.paginaPrin.setLogin(vueloEncontrado);
                     paginaPrin.getMensaje("Iniciando Sesion Bienvenido!");
+                    new Manejador_CompraVuelos();
                 } else {
                     paginaPrin.getMensaje("No se pudo encontrar el nombre de usuario");
                 }

@@ -1,13 +1,17 @@
 package com.mycompany.vista;
+
+import java.awt.event.ActionListener;
+
 public class FRMPagos extends javax.swing.JFrame {
     public FRMPagos() {
         initComponents();
     }
+    public void escuchador(ActionListener manejador){
+        this.btnPagar.addActionListener(manejador);
+        this.btnSalir.addActionListener(manejador);
+    }
     
-    
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

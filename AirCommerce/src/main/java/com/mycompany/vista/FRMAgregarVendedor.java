@@ -1,8 +1,39 @@
 package com.mycompany.vista;
+
+import Manejador.Persona;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 public class FRMAgregarVendedor extends javax.swing.JFrame {
     public FRMAgregarVendedor() {
         initComponents();
     }
+        public void escuchadorBotones(ActionListener manejador){
+        this.btnAgregar.addActionListener(manejador);
+        this.btnSalir.addActionListener(manejador);
+    }
+    public void Limpiar(){
+        jtContraseña.setText("");
+        jtGenero.setText("");
+        jtNombre.setText("");
+    }
+    public void getMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    public Persona getComprador() {
+        try {
+            String nombreUsuarios = jtNombre.getText();
+            String password = jtContraseña.getText();
+            String genero = jtGenero.getText();
+
+            return new Persona(nombreUsuarios, password, genero);
+        } catch (NumberFormatException e) {
+
+            return null;
+        }
+    }
+
     
     
     
