@@ -127,6 +127,8 @@ public class FRMPaginaPrincipalVendedor extends javax.swing.JFrame {
     }
 
     public void limpiarLogin() {
+        jtPassword.setText("");
+        jtUsername.setText("");
 
     }
 

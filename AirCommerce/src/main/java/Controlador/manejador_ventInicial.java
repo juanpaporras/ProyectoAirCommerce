@@ -34,7 +34,6 @@ public class manejador_ventInicial implements ActionListener{
                    
                 } else if (opcionSeleccionada.equals("Registro y administracion de vuelos")) {
                     new manejador_PagPrincipalVendedor();
-                    
                 }
                 break;
             case "Salir":

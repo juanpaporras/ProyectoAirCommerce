@@ -1,6 +1,8 @@
 package com.mycompany.vista;
 
+import Manejador.Tarjeta;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class FRMPagos extends javax.swing.JFrame {
     public FRMPagos() {
@@ -10,8 +12,17 @@ public class FRMPagos extends javax.swing.JFrame {
         this.btnPagar.addActionListener(manejador);
         this.btnSalir.addActionListener(manejador);
     }
-    
-
+    public String getNumeroTarjeta(){
+        return jtNumeroTarjeta.getText();
+    }
+    public void setPagos(Tarjeta tarjeta){
+        jtFechaVencimiento.setText(tarjeta.getFecha_exp());
+        jtNumeroTarjeta.setText(tarjeta.getNum_tarjeta());
+        jtCCV.setText(""+tarjeta.getCvv());
+    }
+    public void mensaje(String mensaje){
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

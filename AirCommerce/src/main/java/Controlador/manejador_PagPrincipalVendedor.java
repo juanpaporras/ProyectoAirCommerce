@@ -27,7 +27,8 @@ public class manejador_PagPrincipalVendedor implements ActionListener {
                 String usuario= vendedor.getUsuario();
                 Persona vueloEncontrado = this.registroVen.buscaPersona(usuario);
                 if (vueloEncontrado != null) {
-                    this.vendedor.setLogin(vueloEncontrado);
+                    //this.vendedor.setLogin(vueloEncontrado);
+                    vendedor.limpiarLogin();
                     vendedor.getMensaje("Iniciando Sesion Bienvenido!");
                     new Manejador_Vuelo();
                 } else {

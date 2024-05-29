@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Modelo;
+package Controlador;
 
 import Manejador.Tarjeta;
 import java.io.FileReader;
@@ -20,7 +20,7 @@ import org.json.simple.parser.ParseException;
  */
 public class RegistroTarjeta {
     private String mensaje;
-    private String filePath= "RegistroTarjeta.json";
+    private String filePath= "registroTarjeta.json";
     ArrayList<Tarjeta> listaTarjetas;
     
     public RegistroTarjeta(){
@@ -33,11 +33,8 @@ public class RegistroTarjeta {
         for (int i = 0; i < listaTarjetas.size(); i++) {
             JSONObject nuevaTarjeta = new JSONObject();
             nuevaTarjeta.put("num_tarjeta", listaTarjetas.get(i).getNum_tarjeta());
-            nuevaTarjeta.put("nombre_titular", listaTarjetas.get(i).getNombre_titular());
             nuevaTarjeta.put("fecha_exp", listaTarjetas.get(i).getFecha_exp());
-            nuevaTarjeta.put("tipo_tarjeta", listaTarjetas.get(i).getTipo_tarjeta());
             nuevaTarjeta.put("cvv", listaTarjetas.get(i).getCvv());
-            nuevaTarjeta.put("saldo", listaTarjetas.get(i).getSaldo());
             jsonArray.add(nuevaTarjeta);
         }
         
@@ -58,13 +55,11 @@ public class RegistroTarjeta {
             for(Object object: jsonArray){
                 JSONObject jsonObject= (JSONObject)object;
                 String num_tarjeta= (String) jsonObject.get("num_tarjeta");
-                String nombre_titular= (String) jsonObject.get("nombre_titular");
                 String fecha_exp= (String) jsonObject.get("fecha_exp");
-                String tipo_tarjeta= (String) jsonObject.get("tipo_tarjeta");
                 int cvv = Integer.parseInt(jsonObject.get("cvv").toString());
-                double saldo = Double.parseDouble(jsonObject.get("saldo").toString());
+             
                 
-                Tarjeta tarjeta = new Tarjeta(num_tarjeta, nombre_titular, fecha_exp, tipo_tarjeta, cvv, saldo);
+                Tarjeta tarjeta = new Tarjeta(num_tarjeta, fecha_exp, cvv);
                 listaTarjetas.add(tarjeta);
             }
         }catch(IOException | ParseException e){

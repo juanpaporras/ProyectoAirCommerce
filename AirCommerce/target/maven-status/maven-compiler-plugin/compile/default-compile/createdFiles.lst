@@ -1,7 +1,6 @@
 com\mycompany\vista\FRMRegistroVuelos.class
 Manejador\Persona.class
 Manejador\Tarjeta.class
-Modelo\RegistroTarjeta.class
 com\mycompany\vista\FRMAgregarComprador.class
 Controlador\Manejador_Vuelo.class
 Controlador\RegistroPersona.class

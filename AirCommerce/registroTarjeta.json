@@ -1,0 +1,52 @@
+[
+    {
+        "num_tarjeta": "1234",
+        "fecha_exp": "12/2024",
+        "cvv": "123"
+    },
+    {
+        "num_tarjeta": "5678",
+        "fecha_exp": "01/2023",
+        "cvv": "456"
+    },
+    {
+        "num_tarjeta": "9101",
+        "fecha_exp": "11/2025",
+        "cvv": "789"
+    },
+    {
+        "num_tarjeta": "1121",
+        "fecha_exp": "02/2022",
+        "cvv": "012"
+    },
+    {
+        "num_tarjeta": "3141",
+        "fecha_exp": "03/2026",
+        "cvv": "345"
+    },
+    {
+        "num_tarjeta": "5161",
+        "fecha_exp": "04/2021",
+        "cvv": "678"
+    },
+    {
+        "num_tarjeta": "7181",
+        "fecha_exp": "05/2027",
+        "cvv": "901"
+    },
+    {
+        "num_tarjeta": "9202",
+        "fecha_exp": "06/2028",
+        "cvv": "234"
+    },
+    {
+        "num_tarjeta": "1222",
+        "fecha_exp": "07/2029",
+        "cvv": "567"
+    },
+    {
+        "num_tarjeta": "3242",
+        "fecha_exp": "08/2030",
+        "cvv": "890"
+    }
+]

@@ -44,6 +44,7 @@ public class Manejador_CompraVuelos implements ActionListener{
             vuelos.dispose();
             break;
         case "Pagar":
+            JOptionPane.showMessageDialog(null, "asdasdasd");
             new Manejador_Pagos();
             break;
         default:
